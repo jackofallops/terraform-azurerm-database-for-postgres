@@ -53,3 +53,18 @@ variable "enforce_ssl" {
   description = "(Optional) Should the server enforce SSL on connections to the database. Defaults to Enabled"
   default     = "Enabled"
 }
+
+variable "azure_postgres_sku_family" {
+  description = "Azure SKU generaition reference for the DB - one of Gen4 or Gen5"
+  default     = "Gen4"
+}
+
+variable "backup_retention_days" {
+  description = "Number of days to retain backup restore points for.  Default is 7"
+  default     = 7
+}
+
+variable "geo_redundant_backup" {
+  description = "Use GRS based backup? (NB - the platform will decide where the backups are held, it is not configurable)"
+  default     = "Disabled"
+}
